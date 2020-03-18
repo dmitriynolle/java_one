@@ -4,44 +4,32 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Staff staff = new Staff("Dmitriy", "Boss", 300000, 1978);
-        System.out.println("Name: " + staff.getName() + " | Post: " + staff.getPost());
+        Dog dog1 = new Dog("Tuzik", "White", 5);
+        Cat cat1 = new Cat("Murzik", "Grey", 4);
+        Bird bird1 = new Bird("Chijik", "Yellow", 2);
+        Horse horse1 = new Horse("Plotva", "Brown", 7);
 
-        Staff[] arr = {
-                new Staff("Vladimir", "Engener", 100000, 1980),
-                new Staff("Ivan", "Engener", 90000, 1973),
-                new Staff("Alexandr", "Engener", 70000, 1987),
-                new Staff("Sergey", "Engener", 110000, 1971),
-                new Staff("Denis", "Engener", 50000, 1979),
-        };
+        if (dog1.run(450))
+            System.out.println("Пёс пробежал");
+        else
+            System.out.println("Пес устал");
 
-        for (int x = 0; x < arr.length; x++) {
-            if (arr[x].getAge() > 40)
-                System.out.println(arr[x].getNumber() + " Name: " + arr[x].getName() + " | Post: " + arr[x].getPost() + " | Salary: "
-                        + arr[x].getSalary() + " | Age:" + arr[x].getAge());
-        }
-        for (int x = 0; x < arr.length; x++) {
-            staffIncrement (arr[x]);
-            System.out.println(arr[x].getNumber() + " Name: " + arr[x].getName() + " | Post: " + arr[x].getPost() + " | Salary: "
-                    + arr[x].getSalary() + " | Age:" + arr[x].getAge());
-        }
+        if (cat1.run(300))
+            System.out.println("Кот пробежал");
+        else
+            System.out.println("Кот устал");
 
-        System.out.println(average (arr, "salary"));
+        if (bird1.jump(0.5))
+            System.out.println("Птица допрыгнула");
+        else
+            System.out.println("Птица не допрыгнула");
 
-        System.out.println(average (arr, "age"));
+        if (horse1.jump(2.8))
+            System.out.println("Лошадь допрыгнула");
+        else
+            System.out.println("Лошадь не допрыгнула");
 
-    }
-
-    private static int average(Staff[] arr, String select) {
-        int average = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (select == "age") average = average + arr[i].getAge();
-            else average = average + arr[i].getSalary();
-        }
-        return average/arr.length;
-    }
-
-    private static void staffIncrement(Staff staff) {
-        if (staff.getAge() > 45) staff.setSalary(staff.getSalary() + 5000);
+        System.out.println(bird1.swim(15));
+        System.out.println(horse1.swim(70));
     }
 }
